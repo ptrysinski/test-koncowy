@@ -1,4 +1,5 @@
 import React from 'react'
+import List from './List';
 
 class Users extends React.Component {
     state = {
@@ -21,7 +22,9 @@ class Users extends React.Component {
 
     return (
         <div>
-            {JSON.stringify(this.state.users)}
+            <List 
+                users={this.state.users}
+            />
         </div>
     )
 }
