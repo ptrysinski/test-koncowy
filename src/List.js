@@ -12,18 +12,15 @@ const List = (props) => (
             props.isError ?
                 'Error'
                 :
-                props.isLoading ?
+                !props.users ?
                     'Loading'
                     :
-                    !props.users ?
-                        'Not Loaded'
+                    props.users.length === 0 ?
+                        'No Users'
                         :
-                        props.users.length === 0 ?
-                            'No Users'
-                            :
-                            <Results
-                                data={props.users}
-                            />
+                        <Results
+                            data={props.users}
+                        />
         }
     </div>
 )
